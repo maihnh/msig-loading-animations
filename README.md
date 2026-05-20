@@ -10,3 +10,9 @@ A small static HTML/CSS repo for sharing MSIG loading animation options with col
 ## Color notes
 
 The generic loaders use `#5a25dd` as the primary color, plus lighter purple shades. The preview surface is designed around a white 90% opacity background.
+
+Github page is at:
+
+```text
+https://maihnh.github.io/msig-loading-animations/
+```
