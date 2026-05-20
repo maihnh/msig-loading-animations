@@ -15,7 +15,4 @@ assets/MSIG-travel.png       # sample webpage background image
 
 ## GitHub Pages
 
-Upload the contents of this folder to your GitHub repo root, then enable GitHub Pages from the `main` branch and `/root` folder.
-
-
-Note: Open file pages display each loader at 70% scale over the webpage background.
+https://maihnh.github.io/msig-loading-animations/
