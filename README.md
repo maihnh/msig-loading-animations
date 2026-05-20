@@ -1,49 +1,21 @@
 # MSIG Loading Animation Library
 
-A small static HTML repo for sharing loading animation options with colleagues.
+Static HTML/CSS gallery for loading animation options.
 
 ## Structure
 
 ```text
-msig-loading-animations
-├── index.html
-├── README.md
-├── logo-animations
-│   ├── README.md
-│   ├── MSIG-loader-circle.html
-│   ├── MSIG-loader-fill.html
-│   └── MSIG-loader-stroke.html
-└── generic-animations
-    ├── dot-loader-1.html
-    ├── dot-loader-2.html
-    ├── 3d-loader.html
-    ├── clipboard-loader.html
-    ├── book-loader.html
-    └── pulsing-loader.html
+index.html
+generic-animations/          # full-page demos with MSIG webpage background + white 90% overlay
+generic-animation-previews/  # white-background previews used by the index cards
+logo-animations/             # original logo loader files, fixed for transparent iframe embedding
+logo-animation-overlays/     # full-page wrappers for logo loaders with MSIG webpage background + white 90% overlay
+assets/MSIG-travel.png       # sample webpage background image
 ```
 
-## How to use
+## GitHub Pages
 
-Open `index.html` to see the full gallery.
-
-Each animation is also available as a standalone HTML file, so you can open or copy it individually.
-
-## Logo-based animations
-
-Add your 3 logo animation files into the `logo-animations` folder using these exact filenames:
-
-```text
-MSIG-loader-circle.html
-MSIG-loader-fill.html
-MSIG-loader-stroke.html
-```
-
-The main `index.html` will preview them automatically.
+Upload the contents of this folder to your GitHub repo root, then enable GitHub Pages from the `main` branch and `/root` folder.
 
 
-All animations are self-contained HTML files. There is no separate `styles.css` file.
-
-
-## Github Page URL
-
-https://maihnh.github.io/msig-loading-animations/
+Note: Open file pages display each loader at 70% scale over the webpage background.

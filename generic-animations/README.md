@@ -1,5 +1,1 @@
-# Generic animations
-
-Each loader in this folder is a standalone HTML file.
-
-All colors were adjusted to use `#BDB4FE` as the darkest shade, plus lighter purple shades, with a white 90% opacity background.
+These files are the full-page generic loader demos used by the Open file buttons. They show the loader over the sample webpage with a white 90% opacity overlay.
