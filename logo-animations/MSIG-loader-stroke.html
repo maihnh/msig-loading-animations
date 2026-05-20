@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Logo Loader - Trim Path Only</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #ffffff;
+      --navy: #0B004A;
+      --red: #F00000;
+      --bar-track: #ececef;
+      --bar-fill: #4a4a4f;
+      --path-length: 900;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: var(--bg);
+      font-family: sans-serif;
+    }
+
+    .loader {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .logo-box {
+      width: 70px;
+      height: 77px;
+      display: grid;
+      place-items: center;
+      animation: logoPulse 3.7s ease-in-out infinite;
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+      overflow: visible;
+    }
+
+    .trim-dark,
+    .trim-red {
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      vector-effect: non-scaling-stroke;
+      stroke-dasharray: var(--path-length);
+      stroke-dashoffset: var(--path-length);
+    }
+
+    .trim-dark {
+      stroke: var(--navy);
+      stroke-width: 2.6;
+      animation: drawAndHold 3.7s ease-in-out infinite;
+    }
+
+    .trim-red {
+      stroke: var(--red);
+      stroke-width: 2.6;
+      animation: drawAndHold 3.7s ease-in-out infinite 0.2s;
+    }
+
+    .progress {
+      width: 280px;
+      height: 8px;
+      background: var(--bar-track);
+      border-radius: 999px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .progress::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 0%;
+      background: var(--bar-fill);
+      border-radius: 999px;
+      animation: loadingBar 20s linear infinite;
+    }
+
+    @keyframes logoPulse {
+      0%, 100% {
+        transform: scale(0.985);
+      }
+      50% {
+        transform: scale(1.015);
+      }
+    }
+
+    @keyframes drawAndHold {
+      0% {
+        stroke-dashoffset: var(--path-length);
+        opacity: 1;
+      }
+      58% {
+        stroke-dashoffset: 0;
+        opacity: 1;
+      }
+      71.5% {
+        stroke-dashoffset: 0;
+        opacity: 1;
+      }
+      100% {
+        stroke-dashoffset: var(--path-length);
+        opacity: 1;
+      }
+    }
+
+    @keyframes loadingBar {
+      0% {
+        width: 0%;
+      }
+      58% {
+        width: 100%;
+      }
+      71.5% {
+        width: 100%;
+      }
+      100% {
+        width: 0%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="loader">
+    <div class="logo-box">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 58 64" aria-label="Loading logo">
+        <path
+          class="trim-dark"
+          d="M2.77277 30.2058C5.38277 27.0058 8.41277 23.6858 12.2728 19.9758C16.1428 16.2658 19.5828 13.3558 22.9128 10.8558C26.6028 8.08583 31.3028 7.99583 34.9228 10.8458C38.2528 13.3458 41.7028 16.2458 45.5728 19.9658C49.4428 23.6758 52.4628 26.9858 55.0728 30.1958C58.1428 33.9558 58.1328 37.9458 55.0628 41.7158C52.4628 44.9158 49.4328 48.2258 45.5628 51.9458C41.6928 55.6558 38.2528 58.5458 34.9228 61.0558C31.2328 63.8258 26.6228 63.8258 22.9328 61.0558C19.6028 58.5458 16.1528 55.6458 12.2928 51.9358C8.42277 48.2258 5.40277 44.9258 2.80277 41.7158C-0.07723 38.1858 -0.17723 33.6958 2.78277 30.2158"
+        />
+        <path
+          class="trim-red"
+          d="M0.0629283 36.7154C0.402928 38.5154 1.24293 40.0054 2.64293 41.7154C5.25293 44.9154 8.42293 48.2154 12.2829 51.9354C16.1429 55.6454 19.5929 58.5454 22.9229 61.0554C24.4829 62.2254 26.2329 62.9154 27.9629 63.0854C24.4229 62.2254 19.2229 56.7654 21.9829 46.9054C24.6029 37.5354 28.8229 30.6854 30.9429 26.4854L31.0029 26.3654C35.2929 18.2854 29.2329 15.5354 24.4729 19.5854C27.8529 14.9454 35.5629 7.35543 38.2429 4.58543C40.9129 1.80543 39.0029 -1.05457 33.6829 0.38543C22.7429 3.67543 9.12293 13.9854 2.77293 26.0854C0.642928 30.1354 -0.257072 33.6554 0.0629283 36.7154Z"
+        />
+      </svg>
+    </div>
+
+    <div class="progress" aria-hidden="true"></div>
+  </div>
+</body>
+</html>
