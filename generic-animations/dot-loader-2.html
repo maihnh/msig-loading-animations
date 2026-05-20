@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dot Loader 2</title>
+  <style>
+    :root {
+      --purple: #BDB4FE;
+      --purple-light: #D9D4FF;
+      --purple-lighter: #EEEAFE;
+      --purple-transparent: rgba(189, 180, 254, 0);
+      --surface-90: rgba(255, 255, 255, 0.9);
+      --surface-solid: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: var(--surface-90);
+    }
+    .loader-stage {
+      width: 100%;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: var(--surface-90);
+    }
+
+    .loader-dot-stretch {
+      width: 16px;
+      height: 16px;
+      position: relative;
+      left: -32px;
+      border-radius: 50%;
+      color: var(--purple-lighter);
+      background: currentColor;
+      box-shadow: 32px 0, -32px 0, 64px 0;
+    }
+    .loader-dot-stretch::after {
+      content: '';
+      position: absolute;
+      left: -32px;
+      top: 0;
+      width: 16px;
+      height: 16px;
+      border-radius: 10px;
+      background: var(--purple);
+      animation: move 3s linear infinite alternate;
+    }
+    @keyframes move {
+      0%, 5% { left: -32px; width: 16px; }
+      15%, 20% { left: -32px; width: 48px; }
+      30%, 35% { left: 0; width: 16px; }
+      45%, 50% { left: 0; width: 48px; }
+      60%, 65% { left: 32px; width: 16px; }
+      75%, 80% { left: 32px; width: 48px; }
+      95%, 100% { left: 64px; width: 16px; }
+    }
+
+  </style>
+</head>
+<body>
+  <main class="loader-stage">
+    <span class="loader-dot-stretch"></span>
+  </main>
+</body>
+</html>

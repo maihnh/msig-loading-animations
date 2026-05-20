@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dot Loader 1</title>
+  <style>
+    :root {
+      --purple: #BDB4FE;
+      --purple-light: #D9D4FF;
+      --purple-lighter: #EEEAFE;
+      --purple-transparent: rgba(189, 180, 254, 0);
+      --surface-90: rgba(255, 255, 255, 0.9);
+      --surface-solid: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: var(--surface-90);
+    }
+    .loader-stage {
+      width: 100%;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: var(--surface-90);
+    }
+
+    .loader-dot-rolling {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      display: block;
+      position: relative;
+      color: var(--purple);
+      left: -100px;
+      box-sizing: border-box;
+      animation: shadowRolling 2s linear infinite;
+    }
+    @keyframes shadowRolling {
+      0% { box-shadow: 0 0 var(--purple-transparent), 0 0 var(--purple-transparent), 0 0 var(--purple-transparent), 0 0 var(--purple-transparent); }
+      12% { box-shadow: 100px 0 var(--purple), 0 0 var(--purple-transparent), 0 0 var(--purple-transparent), 0 0 var(--purple-transparent); }
+      25% { box-shadow: 110px 0 var(--purple), 100px 0 var(--purple-light), 0 0 var(--purple-transparent), 0 0 var(--purple-transparent); }
+      36% { box-shadow: 120px 0 var(--purple), 110px 0 var(--purple-light), 100px 0 var(--purple-lighter), 0 0 var(--purple-transparent); }
+      50% { box-shadow: 130px 0 var(--purple), 120px 0 var(--purple-light), 110px 0 var(--purple-lighter), 100px 0 var(--purple-lighter); }
+      62% { box-shadow: 200px 0 var(--purple-transparent), 130px 0 var(--purple), 120px 0 var(--purple-light), 110px 0 var(--purple-lighter); }
+      75% { box-shadow: 200px 0 var(--purple-transparent), 200px 0 var(--purple-transparent), 130px 0 var(--purple), 120px 0 var(--purple-light); }
+      87% { box-shadow: 200px 0 var(--purple-transparent), 200px 0 var(--purple-transparent), 200px 0 var(--purple-transparent), 130px 0 var(--purple); }
+      100% { box-shadow: 200px 0 var(--purple-transparent), 200px 0 var(--purple-transparent), 200px 0 var(--purple-transparent), 200px 0 var(--purple-transparent); }
+    }
+
+  </style>
+</head>
+<body>
+  <main class="loader-stage">
+    <span class="loader-dot-rolling"></span>
+  </main>
+</body>
+</html>

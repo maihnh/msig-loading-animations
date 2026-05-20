@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3D Loader</title>
+  <style>
+    :root {
+      --purple: #BDB4FE;
+      --purple-light: #D9D4FF;
+      --purple-lighter: #EEEAFE;
+      --purple-transparent: rgba(189, 180, 254, 0);
+      --surface-90: rgba(255, 255, 255, 0.9);
+      --surface-solid: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: var(--surface-90);
+    }
+    .loader-stage {
+      width: 100%;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: var(--surface-90);
+    }
+
+    .loader-3d {
+      position: relative;
+      width: 48px;
+      height: 48px;
+      background: var(--purple);
+      transform: rotateX(65deg) rotate(45deg);
+      color: var(--purple-light);
+      animation: layers1 1s linear infinite alternate;
+    }
+    .loader-3d::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(216, 204, 251, 0.82);
+      animation: layerTr 1s linear infinite alternate;
+    }
+    @keyframes layers1 {
+      0% { box-shadow: 0 0 0 0 var(--purple-light); }
+      90%, 100% { box-shadow: 20px 20px 0 -4px var(--purple-light); }
+    }
+    @keyframes layerTr {
+      0% { transform: translate(0, 0) scale(1); }
+      100% { transform: translate(-25px, -25px) scale(1); }
+    }
+
+  </style>
+</head>
+<body>
+  <main class="loader-stage">
+    <span class="loader-3d"></span>
+  </main>
+</body>
+</html>
