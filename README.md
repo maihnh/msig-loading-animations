@@ -42,3 +42,8 @@ The main `index.html` will preview them automatically.
 
 
 All animations are self-contained HTML files. There is no separate `styles.css` file.
+
+
+## Github Page URL
+
+https://maihnh.github.io/msig-loading-animations/
